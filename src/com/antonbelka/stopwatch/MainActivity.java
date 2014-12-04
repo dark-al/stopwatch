@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.KeyEvent;
@@ -38,7 +39,7 @@ public class MainActivity extends Activity {
 		swAdapter = new ArrayAdapter<String>(getApplicationContext(),
 				android.R.layout.simple_list_item_1, swArrayList);
 		swListView.setAdapter(swAdapter);
-		swTimer = new StopwatchTimer();
+		swTimer = new StopwatchTimer(this);
 
 		infoTextView.setText(R.string.info_start);
 		vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
@@ -60,9 +61,19 @@ public class MainActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+
+		switch (id) {
+		case R.id.action_settings:
 			dialogSettings.show();
+			break;
+		case R.id.action_results:
+			Intent intent = new Intent(this, ResultsActivity.class);
+			startActivity(intent);
+			break;
+		default:
+			break;
 		}
+		
 		return super.onOptionsItemSelected(item);
 	}
 
@@ -82,7 +93,9 @@ public class MainActivity extends Activity {
 				if (infoTextView.getVisibility() == View.VISIBLE) {
 					infoTextView.setVisibility(View.INVISIBLE);
 				}
-				swAdapter.add(String.valueOf(swTimer.getTime()));
+				Integer time = swTimer.getTime();
+				swTimer.addValue(time);
+				swAdapter.add(String.valueOf(time));
 			}
 
 			return true;
