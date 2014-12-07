@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
 		default:
 			break;
 		}
-		
+
 		return super.onOptionsItemSelected(item);
 	}
 

@@ -8,11 +8,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.antonbelka.stopwatch.ResultsActivity" >
 
+    <TextView
+        android:id="@+id/infoResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <ListView
-        android:id="@+id/resultsList"
+        android:id="@+id/listResults"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-
-	</ListView>
+    </ListView>
 
 </RelativeLayout>

@@ -4,6 +4,7 @@
     <string name="app_name">Stopwatch</string>
     <string name="info_start">Please use settings to choose button for timer control. Vibration says, that timer started.</string>
     <string name="info_stopwatch_started">Stopwatch started. Press key to get result.</string>
+    <string name="info_empty_results">No results found in the database.</string>
     <string name="action_settings">Settings</string>
     <string name="action_results">Results</string>
     <string name="dialog_settings">Choose button</string>
@@ -14,5 +15,7 @@
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
     <string name="title_activity_results">Results</string>
+    <string name="dialog_delete">Delete result</string>
+    <string name="dialog_delete_message">Do you want to delete a result?</string>
 
 </resources>

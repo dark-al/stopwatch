@@ -10,14 +10,14 @@ public class StopwatchTimerTask extends TimerTask {
 	protected boolean isRunning = false;
 	protected ArrayList<Integer> timerValues;
 	private DbHelper mDbHelper;
-	
+
 	public StopwatchTimerTask(Context context) {
 		super();
 		mDbHelper = new DbHelper(context);
 		timerValues = new ArrayList<Integer>();
 
 	}
-	
+
 	@Override
 	public void run() {
 		if (time == 10000) {
